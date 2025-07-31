@@ -28,6 +28,3 @@ export default function CourseNavigation() {
     </div>
   );
 }
-
-
-const links = ["Home", "Modules", "Piazza", "Zoom", "Assignments", "Quizzes", "Grades", "People"];
