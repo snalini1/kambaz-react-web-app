@@ -1,0 +1,72 @@
+[
+  {
+    "_id": "CS101",
+    "name": "React JS",
+    "number": "CS1234",
+    "startDate": "2025-01-10",
+    "endDate": "2025-05-15",
+    "department": "Full Stack Development",
+    "credits": 4,
+    "description": "This course introduces students to the fundamentals of React JS for building modern web applications using reusable components and a component-based architecture. Emphasis is placed on practical development, JSX, hooks, and managing state."
+  },
+  {
+    "_id": "CS102",
+    "name": "Node.js",
+    "number": "CS2345",
+    "startDate": "2025-01-10",
+    "endDate": "2025-05-15",
+    "department": "Server-Side Programming",
+    "credits": 4,
+    "description": "An introduction to server-side development with Node.js, this course covers building scalable and efficient back-end applications using JavaScript runtime. Topics include Express.js, asynchronous programming, and RESTful APIs."
+  },
+  {
+    "_id": "CS103",
+    "name": "MongoDB",
+    "number": "CS3456",
+    "startDate": "2025-01-10",
+    "endDate": "2025-05-15",
+    "department": "NoSQL Databases",
+    "credits": 3,
+    "description": "A practical course on MongoDB, focusing on document-oriented NoSQL database management, schema design, aggregation framework, and data modeling for modern applications."
+  },
+  {
+    "_id": "CS104",
+    "name": "JavaScript",
+    "number": "CS4567",
+    "startDate": "2025-01-10",
+    "endDate": "2025-05-15",
+    "department": "Frontend Fundamentals",
+    "credits": 4,
+    "description": "This course covers core JavaScript concepts, including variables, functions, DOM manipulation, and event handling. It prepares students to write interactive web applications with strong programming fundamentals."
+  },
+  {
+    "_id": "CS105",
+    "name": "TypeScript",
+    "number": "CS5678",
+    "startDate": "2025-01-10",
+    "endDate": "2025-05-15",
+    "department": "Typed JS for React",
+    "credits": 3,
+    "description": "An introduction to TypeScript, focusing on type-safe JavaScript development. Topics include interfaces, generics, classes, and integrating TypeScript into React projects for enhanced maintainability and scalability."
+  },
+  {
+    "_id": "CS106",
+    "name": "Git & GitHub",
+    "number": "CS6789",
+    "startDate": "2025-01-10",
+    "endDate": "2025-05-15",
+    "department": "Version Control Basics",
+    "credits": 2,
+    "description": "This course provides foundational knowledge of version control using Git and GitHub. Students will learn how to track changes, collaborate on projects, resolve merge conflicts, and use branching strategies effectively."
+  },
+  {
+    "_id": "CS107",
+    "name": "HTML & CSS",
+    "number": "CS7890",
+    "startDate": "2025-01-10",
+    "endDate": "2025-05-15",
+    "department": "Web Foundations",
+    "credits": 3,
+    "description": "A comprehensive introduction to web development using HTML and CSS. Topics include semantic markup, responsive design, layout techniques, and styling fundamentals essential for building modern websites."
+  }
+]

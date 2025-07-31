@@ -1,79 +1,39 @@
 import { Link } from "react-router-dom";
-import { Card, Button, Col, Row } from "react-bootstrap";
+import * as db from "./Database";
+import { Row, Col, Card, Button } from "react-bootstrap";
 
 export default function Dashboard() {
-  const courses = [
-    {
-      id: "1234",
-      title: "CS1234 React JS",
-      description: "Full Stack Development",
-      image: "/images/reactjs.jpg",
-    },
-    {
-      id: "2345",
-      title: "CS2345 Node.js",
-      description: "Server-Side Programming",
-      image: "/images/nodejs.jpg",
-    },
-    {
-      id: "3456",
-      title: "CS3456 MongoDB",
-      description: "NoSQL Databases",
-      image: "/images/mongodb.jpg",
-    },
-    {
-      id: "4567",
-      title: "CS4567 JavaScript",
-      description: "Frontend Fundamentals",
-      image: "/images/javascript.jpg",
-    },
-    {
-      id: "5678",
-      title: "CS5678 TypeScript",
-      description: "Typed JS for React",
-      image: "/images/typescript.jpg",
-    },
-    {
-      id: "6789",
-      title: "CS6789 Git & GitHub",
-      description: "Version Control Basics",
-      image: "/images/github.jpg",
-    },
-    {
-      id: "7890",
-      title: "CS7890 HTML & CSS",
-      description: "Web Foundations",
-      image: "/images/htmlcss.jpg",
-    },
-  ];
+  const courses = db.courses;
 
   return (
     <div id="wd-dashboard">
       <h1 id="wd-dashboard-title">Dashboard</h1>
       <hr />
-      <h2 id="wd-dashboard-published">Published Courses (7)</h2>
-      <hr />
+      <h2 id="wd-dashboard-published">Published Courses ({courses.length})</h2>
       <div id="wd-dashboard-courses">
-        <Row xs={1} sm={2} md={3} lg={4} className="g-4">
+        <Row xs={1} md={5} className="g-4">
           {courses.map((course) => (
-            <Col key={course.id} style={{ minWidth: "250px", maxWidth: "270px" }}>
-              <Card className="h-100">
+            <Col key={course._id} className="wd-dashboard-course" style={{ width: "300px" }}>
+              <Card>
                 <Link
-                  to={`/Kambaz/Courses/${course.id}/Home`}
-                  className="text-decoration-none text-dark"
+                  to={`/Kambaz/Courses/${course._id}/Home`}
+                  className="wd-dashboard-course-link text-decoration-none text-dark"
                 >
                   <Card.Img
+                    src={`/images/${imageMap[course.name] || 'default.jpg'}`}
                     variant="top"
-                    src={course.image}
+                    width="100%"
                     height={160}
-                    style={{ objectFit: "cover" }}
+                    onError={(e) => {
+                      e.currentTarget.src = "/images/default.jpg";
+                    }}
                   />
-                  <Card.Body>
-                    <Card.Title className="text-nowrap overflow-hidden">
-                      {course.title}
+                  <Card.Body className="card-body">
+                    <Card.Title className="wd-dashboard-course-title text-nowrap overflow-hidden">
+                      {course.number} {course.name}
                     </Card.Title>
                     <Card.Text
-                      className="overflow-hidden"
+                      className="wd-dashboard-course-description overflow-hidden"
                       style={{ height: "100px" }}
                     >
                       {course.description}
@@ -89,3 +49,13 @@ export default function Dashboard() {
     </div>
   );
 }
+
+const imageMap: Record<string, string> = {
+  "HTML & CSS": "htmlcss.jpg",
+  "Git & GitHub": "github.jpg",
+  "TypeScript": "typescript.jpg",
+  "JavaScript": "javascript.jpg",
+  "MongoDB": "mongodb.jpg",
+  "Node.js": "nodejs.jpg",
+  "React JS": "reactjs.jpg"
+};
