@@ -7,6 +7,17 @@ export default function Labs() {
   return (
     <div>
       <h1>Labs</h1>
+      <h2>Nalini Singh - Web Development Summer 2 2025</h2>
+      <h3>
+  Repository Link:{" "}
+  <a 
+    href="https://github.com/snalini1/kambaz-react-web-app" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    https://github.com/snalini1/kambaz-react-web-app
+  </a>
+</h3>
       <TOC />
       <Routes>
         <Route path="/" element={<Navigate to="Lab1" />} />
