@@ -41,6 +41,7 @@ tag to tell browsers to render the gaps.
         </ol>
         Chilli Paneeer - My favorite recipe:
         <ol id="wd-chilli-paneer">
+            <li>Turn the gas on.</li>
             <li>Fry the paneer.</li>
             <li>Sauté the vegetables and aromatics.</li>
             <li>Prepare and add the sauces.</li>
@@ -60,6 +61,8 @@ tag to tell browsers to render the gaps.
             <li>Sapiens</li>
             <li>Frankli in Love</li>
             <li>Percy Jackson</li>
+          <li>God of small things</li>
+          <li>Invisible Women</li>
         </ul>
       </div>
       <div id="wd-tables">
