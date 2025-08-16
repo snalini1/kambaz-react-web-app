@@ -183,6 +183,12 @@ tag to tell browsers to render the gaps.
       id="wd-all-good">
         Hello World!
         </button>
+      &nbsp;
+      <button type="button"
+        onClick={() => alert("File Uploaded!")}
+        id="wd-file-upload">
+        Upload file
+      </button>
       <h5 id="wd-radio-buttons">Radio buttons</h5>
       <label>Favorite movie genre:</label><br />
       <input type="radio" name="radio-genre" id="wd-radio-comedy"/>
