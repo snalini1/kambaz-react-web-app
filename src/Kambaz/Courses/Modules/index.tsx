@@ -32,7 +32,7 @@ export default function Modules() {
                 </ul>
               </li>
               <li className="wd-lesson">
-                <span className="wd-title">Exams</span>
+                <span className="wd-title">Quiz</span>
                 <ul className="wd-content">
                   <li className="wd-content-item">Q1: History of Web Development</li>
                 </ul>
@@ -61,7 +61,7 @@ export default function Modules() {
                 </ul>
               </li>
               <li className="wd-lesson">
-                <span className="wd-title">Exams</span>
+                <span className="wd-title">Quiz</span>
                 <ul className="wd-content">
                   <li className="wd-content-item">Q2: MERN Stack Facts</li>
                 </ul>
@@ -90,10 +90,16 @@ export default function Modules() {
                 </ul>
               </li>
               <li className="wd-lesson">
-                <span className="wd-title">Exams</span>
+                <span className="wd-title">Quiz</span>
                 <ul className="wd-content">
                   <li className="wd-content-item">Q3: CyberSecurity</li>
                   <li className="wd-content-item">Q4: Cumulative Quiz</li>
+                </ul>
+              </li>
+                <li className="wd-lesson">
+                <span className="wd-title">Exam</span>
+                <ul className="wd-content">
+                  <li className="wd-content-item">E1: Midterm1</li>
                 </ul>
               </li>
             </ul>
