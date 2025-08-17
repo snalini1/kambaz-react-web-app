@@ -41,6 +41,7 @@ tag to tell browsers to render the gaps.
         </ol>
         Chilli Paneeer - My favorite recipe:
         <ol id="wd-chilli-paneer">
+            <li>Turn the gas on.</li>
             <li>Fry the paneer.</li>
             <li>Sauté the vegetables and aromatics.</li>
             <li>Prepare and add the sauces.</li>
@@ -60,6 +61,8 @@ tag to tell browsers to render the gaps.
             <li>Sapiens</li>
             <li>Frankli in Love</li>
             <li>Percy Jackson</li>
+          <li>God of small things</li>
+          <li>Invisible Women</li>
         </ul>
       </div>
       <div id="wd-tables">
@@ -180,6 +183,12 @@ tag to tell browsers to render the gaps.
       id="wd-all-good">
         Hello World!
         </button>
+      &nbsp;
+      <button type="button"
+        onClick={() => alert("File Uploaded!")}
+        id="wd-file-upload">
+        Upload file
+      </button>
       <h5 id="wd-radio-buttons">Radio buttons</h5>
       <label>Favorite movie genre:</label><br />
       <input type="radio" name="radio-genre" id="wd-radio-comedy"/>
