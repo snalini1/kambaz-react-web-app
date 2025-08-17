@@ -5,7 +5,7 @@ export default function AssignmentEditor() {
 
       {/* Assignment Name */}
       <label htmlFor="wd-name">Assignment Name</label><br />
-      <input id="wd-name" value="A1 - ENV + HTML" /><br /><br />
+      <input id="wd-name" value="Introduction to Web Development" /><br /><br />
 
       {/* Description */}
       <label htmlFor="wd-description">Description</label><br />
@@ -105,7 +105,7 @@ export default function AssignmentEditor() {
               <label htmlFor="wd-due-date">Due</label>
             </td>
             <td>
-              <input id="wd-due-date" type="date" value="2025-07-12" />
+              <input id="wd-due-date" type="date" value="2025-01-07" />
             </td>
           </tr>
 
@@ -115,7 +115,7 @@ export default function AssignmentEditor() {
               <label htmlFor="wd-available-from">Available from</label>
             </td>
             <td>
-              <input id="wd-available-from" type="date" value="2025-07-10" />
+              <input id="wd-available-from" type="date" value="2025-01-01" />
             </td>
           </tr>
 
@@ -125,7 +125,7 @@ export default function AssignmentEditor() {
               <label htmlFor="wd-available-until">Until</label>
             </td>
             <td>
-              <input id="wd-available-until" type="date" value="2025-07-20" />
+              <input id="wd-available-until" type="date" value="2025-01-07" />
             </td>
           </tr>
         </tbody>
