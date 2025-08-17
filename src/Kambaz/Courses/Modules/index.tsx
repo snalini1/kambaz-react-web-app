@@ -1,109 +1,77 @@
-export default function Modules() {
-    return (
-      <div>
-        <button>Collapse All</button>
-        <button>View Progress</button>
-        <select id="wd-publish">
-         <option value="PUBLISHALL">Publish All</option>
-         <option value="PUBLISHSONE">Publish One</option>
-       </select>
+// src/Kambaz/Courses/Modules/index.tsx
+import { ListGroup } from "react-bootstrap";
+import ModulesControls from "./ModulesControls";
+import LessonControlButtons from "./LessonControlButtons";
+import ModuleControlButtons from "./ModuleControlButtons";
+import { BsGripVertical } from "react-icons/bs";
 
-        <button>+ Module</button>
-        <ul id="wd-modules">
-          <li className="wd-module">
-            <div className="wd-title">Week 1: 1/1 - 1/7</div>
-            <ul className="wd-lessons">
-              <li className="wd-lesson">
-                <span className="wd-title">Lecture 1 (1/1): Introduction</span>
-                <ul className="wd-content">
-                  <li className="wd-content-item">Syllabus</li>
-                </ul>
-              </li>
-              <li className="wd-lesson">
-                <span className="wd-title">Lecture 2 (1/4): History of Web Development</span>
-                <ul className="wd-content">
-                  <li className="wd-content-item">History of the internet</li>
-                </ul>
-              </li>
-              <li className="wd-lesson">
-                <span className="wd-title">Assignments</span>
-                <ul className="wd-content">
-                  <li className="wd-content-item">A1 (Due 1/7): Introduction to Web Development</li>
-                </ul>
-              </li>
-              <li className="wd-lesson">
-                <span className="wd-title">Quiz</span>
-                <ul className="wd-content">
-                  <li className="wd-content-item">Q1: History of Web Development</li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li className="wd-module">
-            <div className="wd-title">Week 2: 1/7 - 1/14</div>
-            <ul className="wd-lessons">
-              <li className="wd-lesson">
-                <span className="wd-title">Lecture 3 (1/8): MERN Stack</span>
-                <ul className="wd-content">
-                  <li className="wd-content-item">Creating a Website</li>
-                </ul>
-              </li>
-              <li className="wd-lesson">
-                <span className="wd-title">Lecture 4 (1/12): Deploying MERN Stack</span>
-                <ul className="wd-content">
-                  <li className="wd-content-item">Publishing a Website</li>
-                </ul>
-              </li>
-              <li className="wd-lesson">
-                <span className="wd-title">Assignments</span>
-                <ul className="wd-content">
-                  <li className="wd-content-item">A2 (Due 1/14): Website 1</li>
-                </ul>
-              </li>
-              <li className="wd-lesson">
-                <span className="wd-title">Quiz</span>
-                <ul className="wd-content">
-                  <li className="wd-content-item">Q2: MERN Stack Facts</li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li className="wd-module">
-            <div className="wd-title">Week 1: 1/14 - 1/21</div>
-            <ul className="wd-lessons">
-              <li className="wd-lesson">
-                <span className="wd-title">Lecture 5 (1/15): CyberSecurity: Making your website safe</span>
-                <ul className="wd-content">
-                  <li className="wd-content-item">How to secure your website</li>
-                </ul>
-              </li>
-              <li className="wd-lesson">
-                <span className="wd-title">Lecture 6 (1/19): Really making sure your website is safe</span>
-                <ul className="wd-content">
-                  <li className="wd-content-item">Really safe website examples</li>
-                </ul>
-              </li>
-              <li className="wd-lesson">
-                <span className="wd-title">Assignments</span>
-                <ul className="wd-content">
-                  <li className="wd-content-item">A3 (Due 1/21): Safe Websity Checklist</li>
-                </ul>
-              </li>
-              <li className="wd-lesson">
-                <span className="wd-title">Quiz</span>
-                <ul className="wd-content">
-                  <li className="wd-content-item">Q3: CyberSecurity</li>
-                  <li className="wd-content-item">Q4: Cumulative Quiz</li>
-                </ul>
-              </li>
-                <li className="wd-lesson">
-                <span className="wd-title">Exam</span>
-                <ul className="wd-content">
-                  <li className="wd-content-item">E1: Midterm1</li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-  );}
+export default function Modules() {
+  return (
+    <div>
+      <ModulesControls /><br /><br /><br /><br />
+
+      <ListGroup className="rounded-0" id="wd-modules">
+        <ListGroup.Item className="wd-module p-0 mb-5 fs-5 border-gray">
+          <div className="wd-title p-3 ps-2 bg-secondary">
+            <BsGripVertical className="me-2 fs-3" /> Week 1: 1/1 - 1/7 <ModuleControlButtons />
+          </div>
+          <ListGroup className="wd-lessons rounded-0">
+            <ListGroup.Item className="wd-lesson p-3 ps-1">
+              <BsGripVertical className="me-2 fs-3" /> Lecture 1 (1/1): Introduction <LessonControlButtons />
+            </ListGroup.Item>
+            <ListGroup.Item className="wd-lesson p-3 ps-1">
+              <BsGripVertical className="me-2 fs-3" /> Lecture 2 (1/4): History of Web Development <LessonControlButtons />
+            </ListGroup.Item>
+            <ListGroup.Item className="wd-lesson p-3 ps-1">
+              <BsGripVertical className="me-2 fs-3" /> Assignments <LessonControlButtons />
+            </ListGroup.Item>
+            <ListGroup.Item className="wd-lesson p-3 ps-1">
+              <BsGripVertical className="me-2 fs-3" /> Quiz <LessonControlButtons />
+            </ListGroup.Item>
+          </ListGroup>
+        </ListGroup.Item>
+        <ListGroup.Item className="wd-module p-0 mb-5 fs-5 border-gray">
+          <div className="wd-title p-3 ps-2 bg-secondary">
+            <BsGripVertical className="me-2 fs-3" /> Week 2: 1/7 - 1/14 <ModuleControlButtons />
+          </div>
+          <ListGroup className="wd-lessons rounded-0">
+            <ListGroup.Item className="wd-lesson p-3 ps-1">
+              <BsGripVertical className="me-2 fs-3" /> Lecture 3 (1/8): MERN Stack <LessonControlButtons />
+            </ListGroup.Item>
+            <ListGroup.Item className="wd-lesson p-3 ps-1">
+              <BsGripVertical className="me-2 fs-3" /> Lecture 4 (1/12): Deploying MERN Stack <LessonControlButtons />
+            </ListGroup.Item>
+            <ListGroup.Item className="wd-lesson p-3 ps-1">
+              <BsGripVertical className="me-2 fs-3" /> Assignments <LessonControlButtons />
+            </ListGroup.Item>
+            <ListGroup.Item className="wd-lesson p-3 ps-1">
+              <BsGripVertical className="me-2 fs-3" /> Quiz <LessonControlButtons />
+            </ListGroup.Item>
+          </ListGroup>
+        </ListGroup.Item>
+        <ListGroup.Item className="wd-module p-0 mb-5 fs-5 border-gray">
+          <div className="wd-title p-3 ps-2 bg-secondary">
+            <BsGripVertical className="me-2 fs-3" /> Week 3: 1/14 - 1/21 <ModuleControlButtons />
+          </div>
+          <ListGroup className="wd-lessons rounded-0">
+            <ListGroup.Item className="wd-lesson p-3 ps-1">
+              <BsGripVertical className="me-2 fs-3" /> Lecture 5 (1/15): CyberSecurity: Making your website safe <LessonControlButtons />
+            </ListGroup.Item>
+            <ListGroup.Item className="wd-lesson p-3 ps-1">
+              <BsGripVertical className="me-2 fs-3" /> Lecture 6 (1/19): Really making sure your website is safe <LessonControlButtons />
+            </ListGroup.Item>
+            <ListGroup.Item className="wd-lesson p-3 ps-1">
+              <BsGripVertical className="me-2 fs-3" /> Assignments <LessonControlButtons />
+            </ListGroup.Item>
+            <ListGroup.Item className="wd-lesson p-3 ps-1">
+              <BsGripVertical className="me-2 fs-3" /> Quiz <LessonControlButtons />
+            </ListGroup.Item>
+            <ListGroup.Item className="wd-lesson p-3 ps-1">
+              <BsGripVertical className="me-2 fs-3" /> Exam <LessonControlButtons />
+            </ListGroup.Item>
+          </ListGroup>
+        </ListGroup.Item>
+      </ListGroup>
+    </div>
+  );
+}
