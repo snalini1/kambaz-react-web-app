@@ -19,10 +19,10 @@ export default function Assignments() {
             <ListGroup.Item className="wd-lesson p-3 ps-1 d-flex align-items-center">
               <BsGripVertical className="me-2 fs-3" /> <LuNewspaper className="me-2 fs-3" color="green" />
               <div className="wd-assignment-text ms-2">
-                <a href="#/Kambaz/Courses/1234/Assignments/123" className="wd-assignment-link d-block">A1 - ENV + HTML</a>
+                <a href="#/Kambaz/Courses/1234/Assignments/123" className="wd-assignment-link d-block">A1: Introduction to Web Development</a>
                 <span className="d-block">
-                  <span style={{ color: '#DC3545' }}>Multiple Modules</span> | <b>Not available until </b> July 4 at 12:00am |</span>
-                <span className="d-block"> <b>Due </b> July 8 at 11:59pm | 100pts </span>
+                  <span style={{ color: '#DC3545' }}>Multiple Modules</span> | <b>Not available until </b> January 1 at 12:00am |</span>
+                <span className="d-block"> <b>Due </b> January 7 at 11:59pm | 100pts </span>
               </div>
               <div className="ms-auto">
                 <LessonControlButton />
@@ -34,10 +34,10 @@ export default function Assignments() {
               <BsGripVertical className="me-2 fs-3" /> <LuNewspaper className="me-2 fs-3" color="green" />
 
               <div className="wd-assignment-text ms-2">
-                <a href="#/Kambaz/Courses/1234/Assignments/123" className="wd-assignment-link" >A2 - CSS + BOOTSTRAP</a>
+                <a href="#/Kambaz/Courses/1234/Assignments/123" className="wd-assignment-link" >A2: Website 1</a>
                 <span className="d-block">
-                  <span style={{ color: '#DC3545' }}>Multiple Modules</span> | <b>Not available until </b> July 6 at 12:00am |</span>
-                <span className="d-block"> <b>Due </b> July 15 at 11:59pm | 100pts </span>
+                  <span style={{ color: '#DC3545' }}>Multiple Modules</span> | <b>Not available until </b> January 7 at 12:00am |</span>
+                <span className="d-block"> <b>Due </b> January 14 at 11:59pm | 100pts </span>
               </div>
               <div className="ms-auto">
                 <LessonControlButton />
@@ -48,10 +48,10 @@ export default function Assignments() {
             <ListGroup.Item className="wd-lesson p-3 ps-1 d-flex align-items-center">
               <BsGripVertical className="me-2 fs-3" /> <LuNewspaper className="me-2 fs-3" color="green" />
               <div className="wd-assignment-text ms-2">
-                <a href="#/Kambaz/Courses/1234/Assignments/123" className="wd-assignment-link d-block">A3 - JAVASCRIPT + REACT</a>
+                <a href="#/Kambaz/Courses/1234/Assignments/123" className="wd-assignment-link d-block">A3: Safe Website Checklist</a>
                 <span className="d-block">
-                  <span style={{ color: '#DC3545' }}>Multiple Modules</span> | <b>Not available until </b> July 10 at 12:00am |</span>
-                <span className="d-block"> <b>Due </b> July 22 at 11:59pm | 100pts </span>
+                  <span style={{ color: '#DC3545' }}>Multiple Modules</span> | <b>Not available until </b> January 14 at 12:00am |</span>
+                <span className="d-block"> <b>Due </b> January 21 at 11:59pm | 100pts </span>
               </div>
               <div className="ms-auto">
                 <LessonControlButton />
