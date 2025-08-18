@@ -9,10 +9,8 @@ export default function Labs() {
     <div>
       <h1>Labs</h1>
 
-      {/* ✅ Your full name */}
       <h4>Nalini Singh</h4>
 
-      {/* ✅ GitHub link with correct ID */}
       <a
         id="wd-github"
         href="https://github.com/YOUR_USERNAME/kambaz-react-web-app"
@@ -31,5 +29,4 @@ export default function Labs() {
         <Route path="Lab3/*" element={<Lab3 />} />
       </Routes>
     </div>
-  );
-}
+);}
