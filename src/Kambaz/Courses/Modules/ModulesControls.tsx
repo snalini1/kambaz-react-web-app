@@ -1,8 +1,7 @@
 // src/Kambaz/Courses/Modules/ModulesControls.tsx
-import { FaPlus } from "react-icons/fa6";
+import { FaPlus, FaXmark } from "react-icons/fa6";
 import GreenCheckmark from "./GreenCheckmark";
 import { Button, Dropdown } from "react-bootstrap";
-
 export default function ModulesControls() {
   return (
     <div id="wd-modules-controls" className="text-nowrap">
@@ -15,16 +14,28 @@ export default function ModulesControls() {
           <GreenCheckmark /> Publish All
         </Dropdown.Toggle>
         <Dropdown.Menu>
-          <Dropdown.Item><GreenCheckmark /> Publish all modules and items</Dropdown.Item>
-          <Dropdown.Item><GreenCheckmark /> Publish modules only</Dropdown.Item>
-          <Dropdown.Item id="wd-unpublish-all-modules-and-items">🚫 Unpublish all modules and items</Dropdown.Item>
-          <Dropdown.Item id="wd-unpublish-modules-only">🚫 Unpublish modules only</Dropdown.Item>
+          <Dropdown.Item id="wd-publish-all">
+            <GreenCheckmark /> Publish All
+          </Dropdown.Item>
+          <Dropdown.Item id="wd-publish-all-modules-and-items">
+            <GreenCheckmark /> Publish all modules and items
+          </Dropdown.Item>
+          <Dropdown.Item id="wd-publish-modules-only">
+            <GreenCheckmark /> Publish modules only
+          </Dropdown.Item>
+          <Dropdown.Item id="wd-unpublish-all-modules-and-items">
+            <FaXmark /> Unpublish all modules and items
+          </Dropdown.Item>
+          <Dropdown.Item id="wd-unpublish-modules-only">
+            <FaXmark /> Unpublish modules only
+          </Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
-      <Button variant="secondary" size="lg" className="me-2 float-end" id="wd-view-progress">
+
+      <Button variant="light" size="lg" className="me-1 float-end" id="wd-add-module-btn">
         View Progress
       </Button>
-      <Button variant="secondary" size="lg" className="me-2 float-end" id="wd-collapse-all">
+      <Button variant="light" size="lg" className="me-1 float-end" id="wd-add-module-btn">
         Collapse All
       </Button>
     </div>
