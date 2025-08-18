@@ -3,22 +3,17 @@ import { Route, Routes, Navigate } from "react-router";
 import TOC from "./TOC";
 import Lab2 from "./Lab2";
 import Lab3 from "./Lab3";
+import Lab4 from "./Lab4";
+import { Provider } from "react-redux";
+import store from "./store";
 
 export default function Labs() {
   return (
-    <div>
-      <h1>Labs</h1>
+    <Provider store={store}>
+<div id="wd-labs">
+                <h1>Labs</h1>
 
-      <h4>Nalini Singh</h4>
-
-      <a
-        id="wd-github"
-        href="https://github.com/YOUR_USERNAME/kambaz-react-web-app"
-        target="_blank"
-        rel="noreferrer"
-      >
-        GitHub Repository
-      </a>
+      <h2>Nalini Singh</h2>
 
       <TOC />
 
@@ -27,6 +22,8 @@ export default function Labs() {
         <Route path="Lab1" element={<Lab1 />} />
         <Route path="Lab2/*" element={<Lab2 />} />
         <Route path="Lab3/*" element={<Lab3 />} />
+        <Route path="Lab4/*" element={<Lab4 />} />
       </Routes>
     </div>
+    </Provider>
 );}
