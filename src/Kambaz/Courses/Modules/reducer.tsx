@@ -7,7 +7,6 @@ const modulesSlice = createSlice({
   initialState,
   reducers: {
     addModule: (state, { payload: module }) => {
-      // Use the module data returned from the server, which includes the server-generated _id
       state.modules = [...state.modules, module] as any;
     },
     deleteModule: (state, { payload: moduleId }) => {

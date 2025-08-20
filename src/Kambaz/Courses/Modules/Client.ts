@@ -1,16 +1,12 @@
 import axios from "axios";
 const axiosWithCredentials = axios.create({ withCredentials: true });
 
-// Add response interceptor to suppress 401 errors
 axiosWithCredentials.interceptors.response.use(
   (response) => response,
   (error) => {
-    // Suppress 401 errors in console since they're expected for new users
     if (error.response?.status === 401) {
-      // Don't log 401 errors to console
       return Promise.reject(error);
     }
-    // Log other errors normally
     console.error('Axios error:', error);
     return Promise.reject(error);
   }
@@ -30,12 +26,12 @@ export const findModuleById = async (moduleId: string) => {
 };
 
 export const findModulesForCourse = async (courseId: string) => {
-  const response = await axiosWithCredentials.get(`${MODULES_API}?course=${courseId}`);
+  const response = await axiosWithCredentials.get(`${REMOTE_SERVER}/api/courses/${courseId}/modules`);
   return response.data;
 };
 
 export const createModule = async (module: any) => {
-  const response = await axiosWithCredentials.post(MODULES_API, module);
+  const response = await axiosWithCredentials.post(`${REMOTE_SERVER}/api/courses/${module.course}/modules`, module);
   return response.data;
 };
 
@@ -53,4 +49,3 @@ export const updateModule = async (module: any) => {
   );
   return data;
 };
- 

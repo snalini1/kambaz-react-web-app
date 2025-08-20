@@ -13,20 +13,16 @@ export default function AssignmentEditor() {
   const { assignments } = useSelector((state: any) => state.assignmentReducer);
   const currentAssignment = assignments.find((assignment: any) => assignment._id === aid);
 
-  // Get today's date and time at 11:11 PM
   const getDefaultDateTime = () => {
     const today = new Date();
-    today.setHours(23, 11, 0, 0); // 11:11 PM
-    return today.toISOString().slice(0, 16); // Format: YYYY-MM-DDTHH:MM
+    today.setHours(23, 11, 0, 0);
+    return today.toISOString().slice(0, 16);
   };
 
-  // Initialize assignment state properly for new vs existing assignments
   const [assignment, setAssignment] = useState<any>(
     currentAssignment ? {
       ...currentAssignment,
-      // Map database field 'not_available_until' to frontend field 'from'
       from: currentAssignment.not_available_until || currentAssignment.available || getDefaultDateTime(),
-      // Map database field 'available' to frontend field 'from' if not_available_until doesn't exist
       available: currentAssignment.not_available_until || currentAssignment.available
     } : {
       title: "",
@@ -76,7 +72,6 @@ export default function AssignmentEditor() {
       newErrors.until = "Until date is required";
     }
 
-    // Check if dates are in logical order
     if (assignment.from && assignment.until && new Date(assignment.from) >= new Date(assignment.until)) {
       newErrors.until = "Until date must be after Available from date";
     }
@@ -97,7 +92,6 @@ export default function AssignmentEditor() {
     setIsSubmitting(true);
     try {
       if (currentAssignment) {
-        // Update existing assignment
         const updatedAssignment = await assignmentsClient.updateAssignment({ 
           ...assignment, 
           course: cid,
@@ -106,7 +100,6 @@ export default function AssignmentEditor() {
         });
         dispatch(updateAssignment(updatedAssignment));
       } else {
-        // Create new assignment
         const newAssignment = await assignmentsClient.createAssignment({ 
           ...assignment, 
           course: cid,
@@ -125,7 +118,6 @@ export default function AssignmentEditor() {
 
   const handleInputChange = (field: string, value: any) => {
     setAssignment((prev: any) => ({ ...prev, [field]: value }));
-    // Clear error when user starts typing
     if (errors[field]) {
       setErrors((prev: any) => ({ ...prev, [field]: "" }));
     }
@@ -432,4 +424,3 @@ export default function AssignmentEditor() {
     </div>
   );
 }
-

@@ -66,4 +66,3 @@ export default function ModulesControls({ moduleName, setModuleName, addModule }
     </div>
   );
 }
-

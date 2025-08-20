@@ -12,17 +12,13 @@ export default function Session({ children }: { children: any }) {
   
   const fetchProfile = async () => {
     try {
-      // Try to get the current user profile
       const currentUser = await client.profile();
       dispatch(setCurrentUser(currentUser));
-
-      // If we have a user, also fetch their enrollments
       if (currentUser) {
         try {
           const enrollments = await client.getEnrollments();
           dispatch(setEnrollments(enrollments));
         } catch (enrollmentErr: any) {
-          // Suppress enrollment errors in console
           if (enrollmentErr.response?.status !== 401) {
             console.error("Error fetching enrollments:", enrollmentErr);
           }
@@ -30,7 +26,6 @@ export default function Session({ children }: { children: any }) {
         }
       }
     } catch (err: any) {
-      // Suppress 401 errors in console since they're expected for new users
       if (err.response?.status !== 401) {
         console.error("Session error:", err);
       }
@@ -44,15 +39,13 @@ export default function Session({ children }: { children: any }) {
     fetchProfile();
   }, []);
 
-  // If we have a currentUser in Redux but session check failed, 
-  // it might be a timing issue after signup - retry multiple times
   useEffect(() => {
-    if (!pending && !currentUser && retryCount < 2) {
+    if (!pending && !currentUser && retryCount < 1) {
       const timer = setTimeout(() => {
         setRetryCount(prev => prev + 1);
         setPending(true);
         fetchProfile();
-      }, 3000); // Wait 3 seconds before retry
+      }, 500);
       
       return () => clearTimeout(timer);
     }
@@ -62,7 +55,6 @@ export default function Session({ children }: { children: any }) {
     return children;
   }
   
-  // Show a loading state while checking session
   return (
     <div className="d-flex justify-content-center align-items-center" style={{ minHeight: "100vh" }}>
       <div className="text-center">

@@ -89,7 +89,7 @@ export default function Signup() {
 
   const handleInputChange = (field: string, value: string) => {
     setCredentials({ ...credentials, [field]: value });
-    setError(""); // Clear error when user starts typing
+    setError("");
     if (validationErrors[field]) {
       setValidationErrors({ ...validationErrors, [field]: "" });
     }

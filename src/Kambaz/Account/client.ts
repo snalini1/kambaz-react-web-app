@@ -1,16 +1,12 @@
 import axios from "axios";
 const axiosWithCredentials = axios.create({ withCredentials: true });
 
-// Add response interceptor to suppress 401 errors
 axiosWithCredentials.interceptors.response.use(
   (response) => response,
   (error) => {
-    // Suppress 401 errors in console since they're expected for new users
     if (error.response?.status === 401) {
-      // Don't log 401 errors to console
       return Promise.reject(error);
     }
-    // Log other errors normally
     console.error('Axios error:', error);
     return Promise.reject(error);
   }
@@ -27,18 +23,16 @@ export const findCoursesForUser = async (userId: string) => {
   return response.data;
 };
 
-export const enrollIntoCourse = async (courseId: string) => {
+export const enrollIntoCourse = async (userId: string, courseId: string) => {
   const response = await axiosWithCredentials.post(
-    `${ENROLLMENTS_API}/current`,
-    { courseId }
+    `${USERS_API}/${userId}/courses/${courseId}`
   );
   return response.data;
 };
 
-export const unenrollFromCourse = async (courseId: string) => {
-  const response = await axiosWithCredentials.post(
-    `${ENROLLMENTS_API}/current`,
-    { courseId }
+export const unenrollFromCourse = async (userId: string, courseId: string) => {
+  const response = await axiosWithCredentials.delete(
+    `${USERS_API}/${userId}/courses/${courseId}`
   );
   return response.data;
 };
@@ -73,6 +67,11 @@ export const findUsersByPartialName = async (name: string) => {
 
 export const findUsersByRole = async (role: string) => {
   const response = await axios.get(`${USERS_API}?role=${role}`);
+  return response.data;
+};
+
+export const findUsersByRoleAndPartialName = async (role: string, name: string) => {
+  const response = await axios.get(`${USERS_API}?role=${encodeURIComponent(role)}&name=${encodeURIComponent(name)}`);
   return response.data;
 };
 
